@@ -1,0 +1,59 @@
+{
+  "name": "helix-static-gen",
+  "description": "Helix is a versatile and powerful static site generator designed for developers who need a seamless and efficient workflow.",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "repository": "git+https://github.com/MelvinJMani/helix-static-gen.git",
+  "author": "Melvin Joseph Mani <melvinjmani@gmail.com>",
+  "license": "MIT",
+  "sourceType": "module",
+  "keywords": [
+    "static site generator"
+  ],
+  "bin": {
+    "helix-static-gen": "lib/cli.js"
+  },
+  "files": [
+    "lib",
+    "template"
+  ],
+  "type": "module",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/MelvinJMani/helix-static-gen/issues"
+  },
+  "homepage": "https://github.com/MelvinJMani/helix-static-gen#readme",
+  "directories": {
+    "lib": "lib",
+    "template": "template"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "child_process": "^1.0.2",
+    "chokidar": "^3.6.0",
+    "dompurify": "^3.1.6",
+    "ejs": "^3.1.10",
+    "enquirer": "^2.4.1",
+    "figures": "^6.1.0",
+    "front-matter": "^4.0.2",
+    "fs-extra": "^11.2.0",
+    "glob": "^11.0.0",
+    "jsdom": "^24.1.1",
+    "live-server": "^1.2.2",
+    "lodash.debounce": "^4.0.8",
+    "marked": "^14.0.0",
+    "meow": "^13.2.0",
+    "ora": "^8.0.1",
+    "perf_hooks": "^0.0.1",
+    "url": "^0.11.4"
+  },
+  "devDependencies": {
+    "chai": "^5.1.1",
+    "mocha": "^10.7.3"
+  }
+}
