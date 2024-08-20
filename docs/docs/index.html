@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<title>Helix</title>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#157878">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Helix</h1>
+    <nav class="nav-menu">
+      <ul>
+        <li>
+          <a href="/" data-slug="home">
+            <i class="fa-solid fa-house"></i> home
+          </a>
+        </li>
+        <li>
+          <a href="/docs/" data-slug="docs/">
+            <i class="fa-solid fa-book"></i> documentation
+          </a>
+        </li>
+        <li> 
+          <a href="https://github.com/MelvinJMani/helix" target="_blank"> 
+            <i class="fa-brands fa-github"></i> github
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  
+  <div class="content">
+    <h1>Docs</h1>
+<p>Helix is a static site generator that allows you to build websites quickly and efficiently using various templating engines like ejs or markdown. Below is a guide on how to install and use helix-static-gen and its main commands.</p>
+<h3>Commands</h3>
+<ul>
+<li><h5>helix-static-gen init</h5>
+</li>
+</ul>
+<p>Initializes a new static site project in the current directory, setting up the necessary folder structure (pages, layouts, partials, assets).</p>
+<ul>
+<li><h5>helix-static-gen start [options]</h5>
+</li>
+</ul>
+<p>Starts a development server, allowing you to preview your site locally. It watches for file changes and automatically rebuilds and refreshes the page.</p>
+<ul>
+<li><h5>helix-static-gen build [options]</h5>
+</li>
+</ul>
+<p>Builds the static site, processing the layouts, pages, partials, and assets into the output directory (usually public).</p>
+<h3>Options</h3>
+<p>By default start command and build command will look for the a configuration file named <code>site.config.cjs.</code>.  If you wish to use a different file, it will have to be supplied to the helix command:</p>
+<pre><code class="language-Bash">helix-static-gen start -c my-config.cjs
+</code></pre>
+<p>By default start command will start the local server at port 3000. If you wish to change that: </p>
+<pre><code class="language-Bash">helix-static-gen start -p 8080
+</code></pre>
+<h3>Configuration</h3>
+<p>You can customize the source and output directories, as well as other options, using a configuration file. By default, this file is named <code>site.config.js.</code></p>
+<p><strong>Example Configuration File</strong></p>
+<pre><code class="language-Javascript">module.exports = {
+  build: {
+    srcPath: './src',
+    outputPath: './docs'
+  },
+  site: {
+    title: 'Helix'
+  }
+};
+</code></pre>
+<h3>Sitemap Generation</h3>
+<p>The build command automatically generates a sitemap.xml file in the output directory (public). This XML file indexes all pages of the site with their URLs and last modification dates.</p>
+<h3>Site Metadata</h3>
+<p>The <code>site.config.js</code> file can include metadata for the entire site, such as the site title and author, which can be used in templates.</p>
+<p>You can also provide page-specific metadata using front matter in the page files, which can include titles, tags, and other information. This metadata is usually written in YAML format at the top of each page.</p>
+<p><strong>Example of Page Metadata</strong></p>
+<pre><code class="language-YAML">---
+title: My First Post
+date: 2023-01-01
+tags:
+  - blog
+  - personal
+---
+Contents of the page go here...
+</code></pre>
+<p>The page-specific metadata can be accessed in your layouts or pages using page object references.</p>
+<h3>Layouts</h3>
+<p>Layouts are reusable templates for pages that define the common structure like headers, footers, and navigation. A layout file contains a placeholder &lt;%- body %&gt; where the content of the page is inserted.</p>
+<p>Example Layout (layouts/default.ejs)</p>
+<pre><code class="language-HTML">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;&lt;%= site.title %&gt;&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;%- body %&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3>Multiple Layouts</h3>
+<p>You can use different layouts for different pages. Specify the layout in the front matter of the page:</p>
+<pre><code class="language-YAML">---
+layout: minimal
+---
+Page content goes here...
+</code></pre>
+<p>This would use the <code>layouts/minimal.ejs</code> file for that page.</p>
+<h3>Partials</h3>
+<p>Partials are reusable sections of HTML that can be included in layouts or pages. For example, to include a <code>footer.ejs</code> partial:</p>
+<pre><code class="language-EJS">&lt;%- include('partials/footer') %&gt;
+</code></pre>
+<h3>Assets</h3>
+<p>Static assets like CSS, JavaScript, and images should be placed in the assets folder. These will be copied over to the output directory during the build process.</p>
+<h3>Pages</h3>
+<p>The files that will generate the pages of your site must be located at the pages folder. Inside that folder you can have any number of .ejs, .md or .html files, and any number of sub folders. Each source file will generate a resulting html file, with the same folder structure, combining the layout structure with the page contents.</p>
+<p>An extra folder will be created at the destination with the name of the original file (without extension) and the resulting page will be saved as index.html inside that folder, except when the name of the original file is already index. This simplify the URLs of the final site.</p>
+<h3>URL and Canonical Tag Generation</h3>
+<p>Each page rendered by <code>helix-static-gen</code> has access to its relative URL via the <code>templateConfig.path</code> property. This path, when combined with the site data, allows you to generate canonical URLs for SEO purposes. For example, you can use the following code to add a canonical URL meta tag:</p>
+<pre><code class="language-html">&lt;meta name="canonical" content="&lt;%= site.domain + path %&gt;"&gt;
+</code></pre>
+<p>This ensures that each page has a proper canonical URL, which is useful for search engines to index the correct page version. </p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong>  For this to work define domain in <code>site.config.js</code></p>
+</blockquote>
+<p><strong>Example Configuration File</strong></p>
+<pre><code class="language-javascript">const isProduction = process.env.NODE_ENV === 'production';
+
+export default {
+  build: {
+    srcPath: './site',
+    outputPath: './docs'
+  },
+  site: {
+    title: 'Helix', 
+    domain: isProduction ? 'https://melvinjmani.github.io/helix' : '',
+    basePath: isProduction ? '/helix' : ''
+  }
+};
+</code></pre>
+
+  </div>
+
+  <footer>
+  <span>
+    This site is generated with ❤️ <a href="https://github.com/MelvinJMani/helix-static-gen" target="_blank" rel="noopener noreferrer">Helix</a>.
+    &copy; <span id="currentYear"></span> All Rights Reserved
+  </span>
+</footer>
+  <script src="/js/main.js"></script>
+</body>
+</html>

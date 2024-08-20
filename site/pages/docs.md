@@ -127,5 +127,26 @@ Each page rendered by ```helix-static-gen``` has access to its relative URL via 
 <meta name="canonical" content="<%= site.domain + path %>">
 ```
 
-This ensures that each page has a proper canonical URL, which is useful for search engines to index the correct page version.
+This ensures that each page has a proper canonical URL, which is useful for search engines to index the correct page version. 
+> **_NOTE:_**  For this to work define domain in ```site.config.js```
+
+__Example Configuration File__
+
+```javascript
+const isProduction = process.env.NODE_ENV === 'production';
+
+export default {
+  build: {
+    srcPath: './site',
+    outputPath: './docs'
+  },
+  site: {
+    title: 'Helix', 
+    domain: isProduction ? 'https://melvinjmani.github.io/helix' : '',
+    basePath: isProduction ? '/helix' : ''
+  }
+};
+```
+
+
 

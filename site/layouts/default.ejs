@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title><%= site.title %></title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="/css/styles.css">
-  <meta name="canonical" content="<%- site.domain + path %>">
+  <%- include('partials/head') %>
 </head>
 <body>
   <div class="header">
@@ -15,17 +9,17 @@
     <nav class="nav-menu">
       <ul>
         <li>
-          <a href="/" data-slug="home">
+          <a href="<%= site.basePath %>/" data-slug="home">
             <i class="fa-solid fa-house"></i> home
           </a>
         </li>
         <li>
-          <a href="/docs/" data-slug="docs/">
+          <a href="<%= site.basePath %>/docs/" data-slug="docs/">
             <i class="fa-solid fa-book"></i> documentation
           </a>
         </li>
         <li> 
-          <a href="https://github.com/MelvinJMani/helix-static-gen" target="_blank"> 
+          <a href="https://github.com/MelvinJMani/helix" target="_blank"> 
             <i class="fa-brands fa-github"></i> github
           </a>
         </li>
