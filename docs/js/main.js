@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get the current page slug from the URL
     const currentPath = window.location.pathname;
     const currentSlug = currentPath === '/' ? 'home' : currentPath.replace('/', '').toLowerCase();
-    console.log(currentSlug);
     // Find the menu item with the matching slug and add the 'active' class
     const menuItems = document.querySelectorAll('.nav-menu a');
     menuItems.forEach(item => {
