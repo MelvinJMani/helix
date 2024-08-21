@@ -53,7 +53,7 @@
 </ul>
 <p>Builds the static site, processing the layouts, pages, partials, and assets into the output directory (usually public).</p>
 <h3>Options</h3>
-<p>By default start command and build command will look for the a configuration file named <code>site.config.cjs.</code>.  If you wish to use a different file, it will have to be supplied to the helix command:</p>
+<p>By default start command and build command will look for the a configuration file named <code>site.config.js.</code>.  If you wish to use a different file, it will have to be supplied to the helix command:</p>
 <pre><code class="language-Bash">helix-static-gen start -c my-config.cjs
 </code></pre>
 <p>By default start command will start the local server at port 3000. If you wish to change that: </p>
@@ -149,6 +149,6 @@ export default {
     &copy; <span id="currentYear"></span> All Rights Reserved
   </span>
 </footer>
-  <script src="/js/main.js"></script>
+  <script src="/helix/js/main.js"></script>
 </body>
 </html>

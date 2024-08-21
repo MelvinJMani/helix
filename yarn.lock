@@ -500,7 +500,14 @@ cors@latest:
     object-assign "^4"
     vary "^1"
 
-cross-spawn@^7.0.0:
+cross-env@^7.0.3:
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
+  integrity sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==
+  dependencies:
+    cross-spawn "^7.0.1"
+
+cross-spawn@^7.0.0, cross-spawn@^7.0.1:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
   integrity sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==
@@ -1058,6 +1065,30 @@ he@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
+
+helix-static-gen@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/helix-static-gen/-/helix-static-gen-1.5.1.tgz#44b74c80654f26f7121fe21b5250d7e21f0c5e4c"
+  integrity sha512-4Xe7DZGz+pxXnJ3y2MA2n7XPmSxoFDnmt8wYPnXCon8NEag6LHzDbDMdFnOcAelC1Qwjsh+MgS/Sxlo419Hrrg==
+  dependencies:
+    chalk "^5.3.0"
+    child_process "^1.0.2"
+    chokidar "^3.6.0"
+    dompurify "^3.1.6"
+    ejs "^3.1.10"
+    enquirer "^2.4.1"
+    figures "^6.1.0"
+    front-matter "^4.0.2"
+    fs-extra "^11.2.0"
+    glob "^11.0.0"
+    jsdom "^24.1.1"
+    live-server "^1.2.2"
+    lodash.debounce "^4.0.8"
+    marked "^14.0.0"
+    meow "^13.2.0"
+    ora "^8.0.1"
+    perf_hooks "^0.0.1"
+    url "^0.11.4"
 
 html-encoding-sniffer@^4.0.0:
   version "4.0.0"

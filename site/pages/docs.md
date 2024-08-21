@@ -18,7 +18,7 @@ Builds the static site, processing the layouts, pages, partials, and assets into
 
 ### Options 
 
-By default start command and build command will look for the a configuration file named ```site.config.cjs.```.  If you wish to use a different file, it will have to be supplied to the helix command:
+By default start command and build command will look for the a configuration file named ```site.config.js.```.  If you wish to use a different file, it will have to be supplied to the helix command:
 
 ```Bash
 helix-static-gen start -c my-config.cjs
