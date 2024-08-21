@@ -1,7 +1,7 @@
 {
   "name": "helix-static-gen",
   "description": "Helix is a versatile and powerful static site generator designed for developers who need a seamless and efficient workflow.",
-  "version": "1.0.0",
+  "version": "1.5.0",
   "main": "lib/index.js",
   "repository": "git+https://github.com/MelvinJMani/helix-static-gen.git",
   "author": "Melvin Joseph Mani <melvinjmani@gmail.com>",
@@ -21,7 +21,8 @@
   "scripts": {
     "format": "biome format --write ./lib",
     "lint": "biome lint ./lib",
-    "test": "mocha --recursive"
+    "test": "mocha --recursive",
+    "ci": "yarn test && yarn lint && yarn format"
   },
   "engines": {
     "node": ">=20.0.0"
