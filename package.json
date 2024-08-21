@@ -19,6 +19,8 @@
   ],
   "type": "module",
   "scripts": {
+    "format": "biome format --write ./lib",
+    "lint": "biome lint ./lib",
     "test": "mocha --recursive"
   },
   "engines": {
@@ -53,6 +55,7 @@
     "url": "^0.11.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.3",
     "chai": "^5.1.1",
     "mocha": "^10.7.3"
   }
