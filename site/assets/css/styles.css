@@ -112,3 +112,17 @@ pre {
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, .75);
   border-radius: 5px;
 }
+
+@media (max-width: 768px) {
+  .header h1 {
+    position: relative;
+    left: 0;
+    transform: none;
+    margin-right: auto;
+  }
+
+  .nav-menu {
+    margin-left: 0;
+    margin-right: auto; /* Push the nav-menu to the right */
+  }
+}
