@@ -1067,13 +1067,14 @@ he@^1.2.0:
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
 
 helix-static-gen@^1.5.1:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/helix-static-gen/-/helix-static-gen-1.5.1.tgz#44b74c80654f26f7121fe21b5250d7e21f0c5e4c"
-  integrity sha512-4Xe7DZGz+pxXnJ3y2MA2n7XPmSxoFDnmt8wYPnXCon8NEag6LHzDbDMdFnOcAelC1Qwjsh+MgS/Sxlo419Hrrg==
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/helix-static-gen/-/helix-static-gen-1.5.2.tgz#f9b603b971711f72d84b6c3114a497ec971f9b07"
+  integrity sha512-bCceYwdt5bhmVQh5kCbigMrxs3aH/vtRbu5SEUavkevlJVbiQQ4zO7b8WtVx4YPFKP9b2e76MYomNrb+z6vY4g==
   dependencies:
     chalk "^5.3.0"
     child_process "^1.0.2"
     chokidar "^3.6.0"
+    cross-env "^7.0.3"
     dompurify "^3.1.6"
     ejs "^3.1.10"
     enquirer "^2.4.1"
